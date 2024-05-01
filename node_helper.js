@@ -149,11 +149,14 @@ module.exports = NodeHelper.create({
 
         console.log(`presenting data: ${JSON.stringify(data)}`);
 
-        // Format today's points
-        const todayFormatted = data.today.map(entry => `P${entry.reward} - ${entry.message} `).join('\n');
+        // Format today's points emails with trailing newline, empty string if no emails today
+        let todayFormatted = data.today.map(entry => `P${entry.reward} - ${entry.message} `).join('\n');
+        if (data.today.length > 0) {
+            todayFormatted += "\n";
+        }
 
         // Format the summary
-        const summaryFormatted = `${todayFormatted}\nToday: £${data.today_total} This week: £${data.this_week_total} Last week: £${data.last_week_total}`;
+        const summaryFormatted = `${todayFormatted}Today: £${data.today_total} This week: £${data.this_week_total} Last week: £${data.last_week_total}`;
 
         return summaryFormatted;
     },
