@@ -156,7 +156,7 @@ module.exports = NodeHelper.create({
         }
 
         // Format the summary
-        const summaryFormatted = `${todayFormatted}Today: £${data.today_total} This week: £${data.this_week_total} Last week: £${data.last_week_total}`;
+        const summaryFormatted = `${todayFormatted}Today: ${data.today_total} This week: ${data.this_week_total} Last week: ${data.last_week_total}`;
 
         return summaryFormatted;
     },
