@@ -174,7 +174,7 @@ module.exports = NodeHelper.create({
         const currentWeekStart = this.getCurrentWeekStart();
         const currentWeekEnd = new Date(currentWeekStart);
         currentWeekEnd.setHours(23, 59, 59, 999); // Set hours, minutes, seconds, and milliseconds to 23:59:59
-        currentWeekEnd.setDate(currentWeekStart.getDate() + 4); // End on Friday
+        currentWeekEnd.setDate(currentWeekStart.getDate() + 5); // End on Friday
         return currentWeekEnd;
     },
 
@@ -189,7 +189,7 @@ module.exports = NodeHelper.create({
         const previousWeekStart = this.getPreviousWeekStart();
         const previousWeekEnd = new Date(previousWeekStart);
         previousWeekEnd.setHours(23, 59, 59, 999); // Set hours, minutes, seconds, and milliseconds to 23:59:59
-        previousWeekEnd.setDate(previousWeekEnd.getDate() + 4);
+        previousWeekEnd.setDate(previousWeekEnd.getDate() + 5);
         return previousWeekEnd;
     },
 
