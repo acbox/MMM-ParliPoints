@@ -85,7 +85,7 @@ module.exports = NodeHelper.create({
 
     parseAwardEmail: function(rewardEmail) {
         // Regular expression pattern to match the reward message
-        const rewardPattern = /\b(\w{3} \d{1,2} \d{4} \d{1,2}:\d{2}[AP]M) - P(\d+) \(Parli Point\) ([A-Za-z\s\/-]+)\n\nPlease\b/;
+        const rewardPattern = /\b(\w{3} \d{1,2} \d{4} \d{1,2}:\d{2}[AP]M) - P(\d+) \(Parli Point\) ((.|\n)*)\n\nPlease\b/;
 
         // Extracting the reward parts
         const rewardMatch = rewardEmail.match(rewardPattern);
