@@ -58,6 +58,12 @@ module.exports = NodeHelper.create({
             };
 
             console.log(`this.imap.search() returned results: ${JSON.stringify(results)}`);
+
+            if (!results.length) {
+                this.sendSocketNotification('POINTS_AWARDED', 'Today: 0 This week: 0 Last week: 0');
+                return;
+            }
+
             const fetch = this.imap.fetch(results, fetchOptions);
 
             fetch.on('message', (msg, seqno) => {
